@@ -1,0 +1,22 @@
+﻿
+int LED = 13;
+
+void setup() {
+
+pinMode(LED, OUTPUT);
+
+}
+
+void loop() {
+
+int Light = analogRead(A3); // 아날로그 신호를 읽어들이는 부분
+
+int ledlight = map(Light,0,1023,255,0);
+
+analogWrite(LED, ledlight);
+
+}
+
+﻿
+ 
+

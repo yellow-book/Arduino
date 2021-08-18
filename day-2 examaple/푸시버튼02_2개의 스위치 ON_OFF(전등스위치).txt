@@ -1,0 +1,33 @@
+/*
+ 제목     : 전등 스위치 만들기
+ 내용     : 2개의 스위치를 통해 LED의 ON/OFF를 제어합니다.
+ */
+ 
+//실행시 가장 먼저 호출되는 함수이며, 최초 1회만 실행됩니다.
+//변수를 선언하거나 초기화를 위한 코드를 포함합니다.
+void setup(){
+  //LED가 연결된 9, 10, 11번 핀을 출력으로 설정합니다.
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  // 버튼이 연결된 5, 6번 핀을 입력(INPUT)으로 설정합니다.
+  pinMode(5, INPUT);
+  pinMode(6, INPUT);
+}
+ 
+// setup() 함수가 호출된 이후, loop() 함수가 호출되며,
+// 블록 안의 코드를 무한히 반복 실행합니다.
+void loop(){
+  // 5번핀에 연결된 버튼이 눌리면 9, 10, 11번 핀에 연결된 LED를 켭니다.
+  if(digitalRead(5) == LOW){
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
+  }
+  // 6번핀에 연결된 버튼이 눌리면 9, 10, 11번 핀에 연결된 LED를 끕니다.
+  else if(digitalRead(6) == LOW){
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    digitalWrite(11, LOW);
+  }
+}

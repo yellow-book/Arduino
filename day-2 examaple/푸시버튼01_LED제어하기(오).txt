@@ -1,0 +1,31 @@
+/*
+ 제목     : 스위치로 LED 제어하기
+ 내용     : 스위치를 누르면 LED가 켜집니다.
+ */
+ 
+// LED를 3번 핀으로 선언합니다.
+int led = 3;
+// 스위치를 5번 핀으로 설정합니다.
+int sw = 5;
+ 
+// 실행시 가장 먼저 호출되는 함수이며, 최초 1회만 실행됩니다.
+void setup() {
+    // LED 핀을 OUTPUT으로 설정합니다.
+    pinMode(led, OUTPUT);
+    // 스위치가 연결된 핀의 모드를 INPUT_PULLUP 상태로 설정합니다.
+    pinMode(sw, INPUT_PULLUP);
+}
+ 
+// setup() 함수가 호출된 이후, loop() 함수가 호출되며,
+// 블록 안의 코드를 무한히 반복 실행됩니다.
+void loop() {
+    // 스위치가 연결된 핀의 로직레벨이 LOW라면, LED가 켜지도록 합니다.
+    if (digitalRead(sw) == LOW) {
+        digitalWrite(led, HIGH);
+    }
+ 
+    // 스위치가 연결된 핀의 로직레벨이 LOW가 아닌 HIGH라면, LED가 꺼지도록 합니다.
+    else {
+        digitalWrite(led, LOW);
+    }
+}
