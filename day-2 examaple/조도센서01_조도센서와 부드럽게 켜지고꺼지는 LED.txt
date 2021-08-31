@@ -1,5 +1,4 @@
-﻿
-int LED = 13;
+﻿int LED = 13;
 
 void setup() {
 
@@ -16,7 +15,3 @@ int ledlight = map(Light,0,1023,255,0);
 analogWrite(LED, ledlight);
 
 }
-
-﻿
- 
-
